@@ -190,6 +190,16 @@ document.addEventListener('keydown', () => {
     triggerStarExplosion();
 });
 
+document.addEventListener('click', () => {
+    if (blownOut) return;
+    blownOut = true;
+    smokeActive = true;
+    smokeDuration = 0;
+
+    document.querySelector('.box-title').classList.add('slide-down');
+    triggerStarExplosion();
+});
+
 function animateFire() {
     fCtx.clearRect(0, 0, fireCanvas.width, fireCanvas.height);
 
